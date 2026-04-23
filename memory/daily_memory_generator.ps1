@@ -1,6 +1,6 @@
 $date = Get-Date -Format "yyyy-MM-dd"
-$memoryDir = "C:\Users\Administrator\.claude\projects\C--Users-Administrator\memory"
-$dailyFile = "$memoryDir\dailies\$date-daily.md"
+$memoryDir = "D:\Claude\memory"
+$dailyFile = "$memoryDir\warm\dailies\$date-daily.md"
 
 # Run Claude in print mode with instructions to generate daily memory
 claude -p `
