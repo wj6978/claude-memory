@@ -19,16 +19,38 @@
 - 触发文件: `memory/conversations/.memory_trigger`
 - 检测到触发后，完善当日记忆并同步 GitHub
 
+## 文件存储规范
+
+**所有文件统一存放在 `D:/Claude/` 目录下：**
+
+```
+D:/Claude/
+├── projects/          ← 项目代码和程序文件
+├── documents/         ← PDF、文档、资料
+├── images/            ← 图片、截图
+├── downloads/         ← 临时下载文件
+├── temp/             ← 临时文件
+├── memory/           ← 记忆系统
+├── sessions/         ← 对话历史
+└── CLAUDE.md        ← 本文件
+```
+
+**规则：**
+- 程序文件 → `D:/Claude/projects/`
+- 图片/截图 → `D:/Claude/images/`
+- PDF/文档 → `D:/Claude/documents/`
+- 不确定的文件 → 先问用户
+
 ## 目录结构
 ```
 D:/Claude/
-├── memory/           ← 记忆系统（GitHub 同步）
-│   ├── MEMORY.md     ← 热记忆
-│   ├── dailies/      ← 每日记录
-│   ├── knowledge/    ← 知识库
-│   └── ...
-├── sessions/         ← 对话历史（本地，不上传）
-└── CLAUDE.md        ← 本文件
+├── CLAUDE.md        ← 本文件
+├── memory/         ← 记忆系统
+├── sessions/       ← 对话历史
+├── projects/       ← 项目文件
+├── documents/      ← 文档资料
+├── images/         ← 图片
+└── ...
 ```
 
 ## GitHub 同步
