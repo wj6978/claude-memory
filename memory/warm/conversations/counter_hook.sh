@@ -21,18 +21,20 @@ if [ "$COUNT" -ge 7 ]; then
 
     # 生成会话摘要
     DATE=$(date +%Y-%m-%d)
-    TIME=$(date +%H:%M)
+    TIME=$(date +%H:%M:%S)
     SUMMARY_FILE="$SUMMARY_DIR/${DATE}-${TIME}-session-summary.md"
 
-    # 读取对话日志并生成摘要
+    # 读取对话日志
     LOG_CONTENT=$(cat "$LOG_FILE" 2>/dev/null || echo "")
 
     # 调用 Claude 生成摘要
-    claude -p --system-prompt "根据以下对话记录，生成一份摘要：
+    if [ -n "$LOG_CONTENT" ]; then
+        printf '%s' "根据以下对话记录，生成一份摘要：
+
 $LOG_CONTENT
 
 格式：
-# 会话摘要 $(date +%Y-%m-%d\ %H:%M)
+# 会话摘要 $DATE $TIME
 
 ## 主要话题
 - 列出主要讨论话题
@@ -46,7 +48,8 @@ $LOG_CONTENT
 ## 待跟进
 - 列出待解决的问题
 
-直接输出 Markdown 内容。" > "$SUMMARY_FILE" 2>/dev/null
+直接输出 Markdown 内容，不需说明。" | claude -p > "$SUMMARY_FILE" 2>&1
+    fi
 
     # 清空对话日志
     > "$LOG_FILE"
