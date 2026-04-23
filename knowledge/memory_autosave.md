@@ -8,9 +8,9 @@ type: knowledge
 
 ## 触发条件
 - 对话次数达到7次时触发
-- 触发文件: `memory/conversations/.memory_trigger`
+- 触发文件: `conversations/.memory_trigger`
 
-## 当检测到触发文件时
+## 完善记忆流程
 
 1. **立即行动**: 读取今天的记忆文件 `dailies/YYYY/MM/DD-记忆.md`
 2. **完善记忆**: 根据对话上下文，补全以下内容：
@@ -20,6 +20,7 @@ type: knowledge
    - 未完成的事项
 3. **写入文件**: 使用 Edit 工具追加到记忆文件
 4. **清除触发**: 删除 `.memory_trigger` 文件
+5. **自动同步**: commit 并 push 到 GitHub
 
 ## 格式要求
 ```markdown
@@ -36,3 +37,20 @@ type: knowledge
 
 ---
 ```
+
+## 三层记忆检索规则
+
+### 热记忆 (MEMORY.md)
+- **位置**: 根目录 MEMORY.md
+- **时机**: 每次会话必读
+- **内容**: 索引、规则、状态
+
+### 温记忆 (dailies/)
+- **位置**: `dailies/YYYY/MM/DD-记忆.md`
+- **时机**: 按需检索
+- **内容**: 每日工作摘要、任务进展
+
+### 冷记忆 (archives/)
+- **位置**: `archives/`
+- **时机**: 明确需求才读取
+- **内容**: 历史归档、长期项目
