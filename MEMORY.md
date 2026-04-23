@@ -25,5 +25,14 @@
 
 ---
 
+## 存储路径
+- 主目录: `D:/Claude/`
+  - `D:/Claude/memory/` — 记忆系统
+  - `D:/Claude/sessions/` — 对话历史
+- 符号链接: `C:/Users/Administrator/.claude/memory` → `D:/Claude/memory`
+- 符号链接: `C:/Users/Administrator/.claude/sessions` → `D:/Claude/sessions`
+
+---
+
 ## 最近同步
-- 2026-04-23: 初始化记忆系统，配置 GitHub 同步
+- 2026-04-23 15:00: 放弃U盘方案，回归本地主存储 D:/Claude/
