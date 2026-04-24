@@ -84,6 +84,10 @@ type: project
 
 **测试场景**: LED亮红灯 → 摄像头拍摄 → Claude确认"看到红灯"
 
+## 测试记录
+- LED测试结果: `memory/warm/testing/results/stm32/2026-04-23_led_control_test.md`
+- DAP验证记录: `memory/warm/testing/results/stm32/2026-04-24_dap_flash_test.md`
+
 ---
 
 ### 方案二：语音交互系统 🔄 进行中
@@ -102,6 +106,12 @@ type: project
 | 9 | 端到端闭环测试 | ⬜ 未开始 |
 
 **项目路径**: `D:\VSCode\STM32_WM8978\`
+
+**最新进展** (2026-04-24):
+- ✅ WM8978项目已创建并编译成功
+- ✅ 基本I2C控制框架完成
+- ✅ 命令协议设计完成
+- ✅ 固件已编译：firmware.bin (27KB)
 
 **WM8978关键参数**:
 | 参数 | 值 |
