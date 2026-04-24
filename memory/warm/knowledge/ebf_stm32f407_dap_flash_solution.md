@@ -43,14 +43,22 @@ pyocd flash -t stm32f407igtx -v firmware.bin
 
 ## 验证命令（通过 COM4 串口）
 ```bash
-# 查看状态
-LED_STATUS
-
-# 控制 LED
+# 手动控制
 LED_R_ON/OFF  - 红灯
 LED_G_ON/OFF  - 绿灯
 LED_B_ON/OFF  - 蓝灯
 LED_ALL_ON/OFF - 所有灯
+
+# 呼吸灯
+LED_BREATH_R    - 红色呼吸灯
+LED_BREATH_G    - 绿色呼吸灯
+LED_BREATH_B    - 蓝色呼吸灯
+LED_BREATH_ALL  - 全彩呼吸灯
+LED_BREATH_STOP - 停止呼吸灯
+
+# 系统
+LED_STATUS   - 查询状态
+HELP         - 帮助
 ```
 
 ## 补充说明
